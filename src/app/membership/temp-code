@@ -1,0 +1,106 @@
+<div class="row border ">
+    <form class="example-full-width m-5">
+      <div class="row h4 ml-4">Personal Details</div>
+      <table class="example-full-width" cellspacing="0">
+        <tr>
+          <td>
+            <mat-form-field class="example-full-width">
+              <mat-label>First name</mat-label>
+              <input matInput>
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="example-full-width">
+              <mat-label>Long Last Name</mat-label>
+              <input matInput>
+            </mat-form-field>
+          </td>
+
+          <td>
+            <mat-form-field class="example-full-width">
+              <mat-label>Father's First Name</mat-label>
+              <input matInput>
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="example-full-width">
+              <mat-label>Long Last Name</mat-label>
+              <input matInput>
+            </mat-form-field>
+          </td>
+        </tr>
+      </table>
+      <table class="example-full-width" cellspacing="0">
+        <tr>
+          <td>
+            <mat-form-field class="example-full-width">
+              <mat-label>Address 1</mat-label>
+              <textarea matInput placeholder="Ex. 100 Main St"></textarea>
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="example-full-width">
+              <mat-label>Address 2</mat-label>
+              <textarea matInput placeholder="Ex. 100 Main St"></textarea>
+            </mat-form-field>
+          </td>
+        </tr>
+      </table>
+      <table class="example-full-width" cellspacing="0">
+        <tr>
+          <td>
+            <mat-form-field class="example-full-width">
+              <mat-label>City</mat-label>
+              <input matInput placeholder="Ex. Kumbakonam">
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="example-full-width">
+              <mat-label>District</mat-label>
+              <input matInput placeholder="Ex. Thanjavur">
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="example-full-width">
+              <mat-label>City</mat-label>
+              <input matInput placeholder="Ex. Kumbakonam">
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="example-full-width">
+              <mat-label>District</mat-label>
+              <input matInput placeholder="Ex. Thanjavur">
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-form-field class="example-full-width">
+              <mat-label>State</mat-label>
+              <input matInput placeholder="Ex. Tamilnadu">
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="example-full-width">
+              <mat-label>Postal Code</mat-label>
+              <input matInput #postalCode maxlength="6" type="number" placeholder="Ex. 612302" value="612302">
+              <mat-hint align="end">{{postalCode.value.length}} / 6</mat-hint>
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="example-full-width">
+              <mat-label>State</mat-label>
+              <input matInput placeholder="Ex. Tamilnadu">
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="example-full-width">
+              <mat-label>Postal Code</mat-label>
+              <input matInput #postalCode maxlength="6" type="number" placeholder="Ex. 612302" value="612302">
+              <mat-hint align="end">{{postalCode.value.length}} / 6</mat-hint>
+            </mat-form-field>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </div>
