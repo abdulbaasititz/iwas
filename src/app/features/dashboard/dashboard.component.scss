@@ -1,0 +1,77 @@
+.example-card {
+  max-width: 400px;
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+
+
+//
+.card-holder {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.basic-card-holder {
+  background-color: white;
+}
+.major-card-holder {
+  background-color: #ffffff;
+}
+.general-service-card-item:hover {
+  transform: scale(1.002);
+}
+.general-service-card-item {
+  border-radius: 8px;
+  border-top: blueviolet 4px solid;
+  border-bottom: blueviolet 2px solid;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  align-items: center;
+  padding: 5px 15px;
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
+  // 0 1rem 3rem rgba(0,0,0,.175)!important;
+
+  img {
+    display: inline;
+    height: 70px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+
+  h2 {
+    font-weight: bold;
+    color: #7e7e7e;
+  }
+
+
+}
+
+
+.booking-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  p {
+    color: #818181;
+    text-align: center;
+    line-height: 1;
+
+    span.cost {
+      display: inline;
+      margin-left: 8px;
+      font-size: 26px;
+      font-weight: bold;
+      color: blueviolet !important;
+    }
+
+    span.currency {
+      margin-left: 8px;
+      color: blueviolet !important;
+    }
+  }
+}
