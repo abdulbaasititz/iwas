@@ -1,8 +1,8 @@
 export class AppConstants {
   public static routes = {
     home: '/',
-    generalService: '/general-service',
-    membership: '/membership',
+    createMember: '/create-member',
+    viewMember: '/view-member',
     subscription: '/subscription',
     dazzlingDebt: '/dazzling-debt'
   };
