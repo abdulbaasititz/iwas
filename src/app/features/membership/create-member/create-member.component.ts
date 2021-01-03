@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {HttpClient} from "@angular/common/http";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-membership',
@@ -9,10 +11,65 @@ import { FormControl } from '@angular/forms';
 export class CreateMemberComponent implements OnInit {
 
   value="clear me";
-  date = new FormControl(new Date());
-  constructor() { }
-
-  ngOnInit(): void {
+  membershipForm : FormGroup;
+  //date = new FormControl(new Date());
+  constructor(private formBuilder : FormBuilder
+              ,private httpClient: HttpClient) {
+    this.membershipForm = this.formBuilder.group({
+      // joiningDateHdr: [new FormControl(new Date()).value],
+      joiningDateHdr:[''],
+      memberNumberHdr: [''],
+      designationHdr: [''],
+      subscribeTypeHdr: [''],
+      firstName: ['' , Validators.required],
+      lastName: ['' , Validators.required],
+      fatherFirstName: ['' , Validators.required],
+      fatherLastName: ['' , Validators.required],
+      permanentAddress: ['' , Validators.required],
+      permanentCity: ['' , Validators.required],
+      permanentDistrict: ['' , Validators.required],
+      permanentState: ['' , Validators.required],
+      permanentPostalCode: ['' , Validators.required],
+      mobileNumber: ['' , Validators.required],
+      whatsappNumber: ['' , Validators.required],
+      aadharNumber: ['' , Validators.required],
+      currentAddress: ['' , Validators.required],
+      currentCity: ['' , Validators.required],
+      currentDistrict: ['' , Validators.required],
+      currentState: ['' , Validators.required],
+      currentPostalCode: ['' , Validators.required],
+    });
   }
 
+  ngOnInit(): void {
+    // this.membershipForm.controls.joiningDateHdr.disable();
+    // this.membershipForm.controls.memberNumberHdr.disable();
+    // this.membershipForm.controls.designationHdr.disable();
+    // this.membershipForm.controls.subscribeTypeHdr.disable();
+  }
+  submitOld(){
+
+    this.httpClient.get<any>('http://localhost:8080/iwas/api/membership/check'
+    ).subscribe(data => {
+      console.log(data);
+      console.log("done");
+      console.log(data[0].memberNumberHdr);
+    });
+  }
+
+  submit() {
+    console.log(this.membershipForm.value);
+    return this.httpClient.post<any>("http://localhost:8080/iwas/api/membership/",
+      this.membershipForm.value
+    ). subscribe ( response => {
+      if(response){
+        console.log(response);
+      }else{
+        alert("not found");
+      }
+    });
+  }
+  clearClick(){
+    this.membershipForm.reset();
+  }
 }

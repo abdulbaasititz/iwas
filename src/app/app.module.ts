@@ -14,7 +14,7 @@ import { NavigationComponent } from './features/navigation/navigation.component'
 import { ViewMemberComponent } from './features/membership/view-member/view-member.component';
 
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { HttpClientModule } from '@angular/common/http';
 
 
 import {A11yModule} from '@angular/cdk/a11y';
@@ -125,7 +125,8 @@ import { LoginComponent } from './features/login/login.component';
     OverlayModule,
     PortalModule,
     ScrollingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

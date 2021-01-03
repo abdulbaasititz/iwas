@@ -1,4 +1,3 @@
-
 <div class="container">
 
   <p></p>
@@ -13,7 +12,7 @@
         <mat-form-field>
           <mat-label>Member Number</mat-label>
           <input formControlName="memberNumber" matInput value="">
-          <button mat-button  matSuffix mat-icon-button aria-label="Clear">
+          <button mat-button matSuffix mat-icon-button aria-label="Clear">
             <mat-icon>search</mat-icon>
           </button>
         </mat-form-field>
@@ -21,8 +20,7 @@
       <div class="col-md-3 col-sm-12 mt-3">
         <mat-form-field class="">
           <mat-label> Aadhar Number*</mat-label>
-          <input formControlName="aadharNumber" matInput placeholder="123462721712">
-          <mat-error *ngIf="subscriptionForm.controls.aadharNumber.hasError('required')">aadhar number is required</mat-error>
+          <input formControlName="aadharNo" matInput placeholder="123462721712">
           <button mat-button matSuffix mat-icon-button>
             <mat-icon>search</mat-icon>
           </button>
@@ -33,7 +31,7 @@
         <mat-form-field appearance="fill">
           <mat-label>Received Date</mat-label>
           <mat-datepicker #dp1 [disabled]="false"></mat-datepicker>
-          <input matInput [matDatepicker]="dp1"  [value]="date.value">
+          <input formControlName="receivedDate" matInput [matDatepicker]="dp1" [value]="date.value">
           <mat-datepicker-toggle matSuffix [for]="dp1"></mat-datepicker-toggle>
         </mat-form-field>
       </div>
@@ -41,17 +39,9 @@
       <div class="col-md-3 col-sm-12 mt-3">
         <mat-form-field>
           <mat-label>Payment</mat-label>
-          <input formControlName="payment" matInput  value="500">
+          <input formControlName="payment" matInput value="500">
         </mat-form-field>
       </div>
-      <!--    <div class="col-md-3 col-sm-12 mt-2">-->
-      <!--      <mat-form-field appearance="fill">-->
-      <!--        <mat-label>Due Date</mat-label>-->
-      <!--        <mat-datepicker #dp2 disabled="false"></mat-datepicker>-->
-      <!--        <input matInput [matDatepicker]="dp2" disabled [value]="date.value">-->
-      <!--        <mat-datepicker-toggle matSuffix [for]="dp2"></mat-datepicker-toggle>-->
-      <!--      </mat-form-field>-->
-      <!--    </div>-->
     </div>
     <div class="row border">
       <div class="col-md-6 col-sm-12 border">
@@ -79,7 +69,7 @@
               <mat-form-field class="mr-4">
                 <input formControlName="firstName" matInput placeholder="First Name*">
               </mat-form-field>
-              <mat-form-field >
+              <mat-form-field>
                 <input formControlName="lastName" matInput placeholder="Last Name*">
               </mat-form-field>
             </div>
@@ -87,7 +77,7 @@
               <mat-form-field class="mr-4">
                 <input formControlName="fatherFirstName" matInput placeholder="Father First Name*">
               </mat-form-field>
-              <mat-form-field >
+              <mat-form-field>
                 <input formControlName="fatherLastName" matInput placeholder="Father Last Name*">
               </mat-form-field>
             </div>
@@ -100,7 +90,7 @@
                 <mat-label>City</mat-label>
                 <input matInput placeholder="Ex. Kumbakonam">
               </mat-form-field>
-              <mat-form-field >
+              <mat-form-field>
                 <mat-label>District</mat-label>
                 <input matInput placeholder="Ex. Thanjavur">
               </mat-form-field>
@@ -110,7 +100,7 @@
                 <mat-label>State</mat-label>
                 <input matInput placeholder="Ex. Tamilnadu">
               </mat-form-field>
-              <mat-form-field >
+              <mat-form-field>
                 <mat-label>Postal Code</mat-label>
                 <input matInput #postalCode maxlength="6" type="number" placeholder="Ex. 612302" value="612302">
                 <mat-hint align="end">{{postalCode.value.length}} / 6</mat-hint>
@@ -133,18 +123,18 @@
               </mat-form-field>
             </div>
             <div class="d-flex">
-              <mat-form-field >
+              <mat-form-field>
                 <mat-label>Aadhar Number*</mat-label>
-                <input  matInput #aadharCode maxlength="12" type="number" placeholder="Ex. 6123 0212 3112">
+                <input matInput #aadharCode maxlength="12" type="number" placeholder="Ex. 6123 0212 3112">
                 <mat-hint align="end">{{aadharCode.value.length}} / 12</mat-hint>
               </mat-form-field>
               <span class="d-flex align-items-center">
               <mat-icon class="mr-2">cloud_upload</mat-icon>
-              <span class="reg-card-text" >Upload Aadhar card Details</span>
+              <span class="reg-card-text">Upload Aadhar card Details</span>
             </span>
             </div>
 
-            <mat-form-field >
+            <mat-form-field>
               <mat-label>Current Address</mat-label>
               <textarea matInput placeholder="Ex. 37 Chinna saliya St"></textarea>
             </mat-form-field>
@@ -153,7 +143,7 @@
                 <mat-label>City</mat-label>
                 <input matInput placeholder="Ex. Kumbakonam">
               </mat-form-field>
-              <mat-form-field >
+              <mat-form-field>
                 <mat-label>District</mat-label>
                 <input matInput placeholder="Ex. Thanjavur">
               </mat-form-field>
@@ -163,7 +153,7 @@
                 <mat-label>State</mat-label>
                 <input matInput placeholder="Ex. Tamilnadu">
               </mat-form-field>
-              <mat-form-field >
+              <mat-form-field>
                 <mat-label>Postal Code</mat-label>
                 <input matInput #postalCode maxlength="6" type="number" placeholder="Ex. 612302" value="612302">
                 <mat-hint align="end">{{postalCode.value.length}} / 6</mat-hint>
@@ -175,12 +165,19 @@
       <p></p>
     </div>
     <p></p>
-    <div class="row ">
-      <div class="col-md-1 col-sm-3">
-        <button mat-button class="border">SAVE</button>
-      </div>
-      <div class="col-md-1 col-sm-3">
-        <button mat-button class="border">RESET</button>
+<!--    <div class="row ">-->
+<!--      <div class="col-md-1 col-sm-3">-->
+<!--        <button mat-button class="border">SAVE</button>-->
+<!--      </div>-->
+<!--      <div class="col-md-1 col-sm-3">-->
+<!--        <button mat-button class="border" (click)="clearData()">RESET</button>-->
+<!--      </div>-->
+<!--    </div>-->
+    <div class="d-flex mt-3">
+      <span class="flex-grow-1"></span>
+      <div class="mr-4">
+        <button type="submit" class="btn btn-outline-success">save</button>
+        <button type="button" mat-raised-button class="ml-4" color="primary" (click)="clearClick()">Clear</button>
       </div>
     </div>
   </form>

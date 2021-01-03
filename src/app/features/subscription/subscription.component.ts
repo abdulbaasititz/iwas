@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, FormGroupDirective, NgForm, Validators} from '@angular/forms';
 // import {ErrorStateMatcher} from '@angular/material/core';
 //
@@ -16,14 +16,15 @@ import {FormBuilder, FormControl, FormGroup, FormGroupDirective, NgForm, Validat
   styleUrls: ['./subscription.component.scss']
 })
 export class SubscriptionComponent implements OnInit {
-  value="clear me";
+  value = "clear me";
   subscriptionForm: FormGroup;
   date = new FormControl(new Date());
 
   constructor(private formBuilder: FormBuilder) {
     this.subscriptionForm = this.formBuilder.group({
       memberNumber: [''],
-      aadharNumber: ['',Validators.required],
+      aadharNo: [''],
+      receivedDate: [''],
       payment: [''],
       firstName: [''],
       lastName: [''],
@@ -36,9 +37,16 @@ export class SubscriptionComponent implements OnInit {
 
   ngOnInit(): void {
     this.subscriptionForm.controls.memberNumber.disable();
+    this.subscriptionForm.controls.aadharNo.disable();
+    this.subscriptionForm.controls.receivedDate.disable();
+    this.subscriptionForm.controls.payment.disable();
+
   }
 
   submit() {
     console.log(this.subscriptionForm.value);
+  }
+  clearClick(){
+    this.subscriptionForm.reset();
   }
 }
