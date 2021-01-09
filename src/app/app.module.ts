@@ -62,6 +62,7 @@ import {MatTreeModule} from '@angular/material/tree';
 import {OverlayModule} from '@angular/cdk/overlay';
 import { LoginComponent } from './features/login/login.component';
 
+import { MatTableExporterModule } from 'mat-table-exporter';
 
 
 @NgModule({
@@ -126,7 +127,8 @@ import { LoginComponent } from './features/login/login.component';
     PortalModule,
     ScrollingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTableExporterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

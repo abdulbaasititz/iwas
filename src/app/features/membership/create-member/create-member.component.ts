@@ -17,28 +17,20 @@ export class CreateMemberComponent implements OnInit {
               ,private httpClient: HttpClient) {
     this.membershipForm = this.formBuilder.group({
       // joiningDateHdr: [new FormControl(new Date()).value],
-      joiningDateHdr:[''],
-      memberNumberHdr: [''],
-      designationHdr: [''],
-      subscribeTypeHdr: [''],
-      firstName: ['' , Validators.required],
-      lastName: ['' , Validators.required],
-      fatherFirstName: ['' , Validators.required],
-      fatherLastName: ['' , Validators.required],
+      joiningDateHdr:['' , Validators.required],
+      memberNumberHdr: ['' , Validators.required],
+      designationHdr: ['' , Validators.required],
+      subscribeTypeHdr: ['Yearly'],
+      name: ['' , Validators.required],
+      fatherName: ['' , Validators.required],
       permanentAddress: ['' , Validators.required],
       permanentCity: ['' , Validators.required],
-      permanentDistrict: ['' , Validators.required],
-      permanentState: ['' , Validators.required],
-      permanentPostalCode: ['' , Validators.required],
       mobileNumber: ['' , Validators.required],
       whatsappNumber: ['' , Validators.required],
       aadharNumber: ['' , Validators.required],
       currentAddress: ['' , Validators.required],
       currentCity: ['' , Validators.required],
-      currentDistrict: ['' , Validators.required],
-      currentState: ['' , Validators.required],
-      currentPostalCode: ['' , Validators.required],
-    });
+       });
   }
 
   ngOnInit(): void {

@@ -11,7 +11,7 @@
         <mat-form-field appearance="fill">
           <mat-label>Joining Date</mat-label>
           <mat-datepicker #dp1 [disabled]="false"></mat-datepicker>
-          <input formControlName="joiningDateHdr" matInput [matDatepicker]="dp1" >
+          <input formControlName="joiningDateHdr" matInput [matDatepicker]="dp1">
           <mat-datepicker-toggle matSuffix [for]="dp1"></mat-datepicker-toggle>
         </mat-form-field>
       </div>
@@ -39,52 +39,28 @@
         <div class="personal-detail info-wrapper">
           <h2 class="info-title">Personal details</h2>
           <div class="info-contents">
-            <div class="d-flex equal-width">
-              <mat-form-field class="mr-4">
-                <input formControlName="firstName" matInput placeholder="First Name*">
-                <mat-error *ngIf="membershipForm.controls.firstName.hasError('required')">First Name is required</mat-error>
-              </mat-form-field>
-              <mat-form-field>
-                <input formControlName="lastName" matInput placeholder="Last Name*">
-                <mat-error *ngIf="membershipForm.controls.lastName.hasError('required')">Last Name is required</mat-error>
-              </mat-form-field>
-            </div>
-            <div class="d-flex equal-width">
-              <mat-form-field class="mr-4">
-                <input formControlName="fatherFirstName" matInput placeholder="Father First Name*">
-                <mat-error *ngIf="membershipForm.controls.fatherFirstName.hasError('required')">Father First Name is required</mat-error>
-              </mat-form-field>
-              <mat-form-field>
-                <input formControlName="fatherLastName" matInput placeholder="Father Last Name*">
-                <mat-error *ngIf="membershipForm.controls.fatherLastName.hasError('required')">Father Last Name is required</mat-error>
-              </mat-form-field>
-            </div>
+            <mat-form-field class="mr-4">
+              <input formControlName="name" matInput placeholder="Name*">
+              <mat-error *ngIf="membershipForm.controls.name.hasError('required')">Name is required</mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="mr-4">
+              <input formControlName="fatherName" matInput placeholder="Father Name*">
+              <mat-error *ngIf="membershipForm.controls.fatherName.hasError('required')">Father Name is
+                required
+              </mat-error>
+            </mat-form-field>
+
             <mat-form-field>
               <mat-label>Permanent Address</mat-label>
               <textarea formControlName="permanentAddress" matInput placeholder="Ex. 39 Main St"></textarea>
 
             </mat-form-field>
-            <div class="d-flex equal-width">
-              <mat-form-field class="mr-4">
-                <mat-label>City</mat-label>
-                <input formControlName="permanentCity" matInput placeholder="Ex. Kumbakonam">
-              </mat-form-field>
-              <mat-form-field>
-                <mat-label>District</mat-label>
-                <input formControlName="permanentDistrict" matInput placeholder="Ex. Thanjavur">
-              </mat-form-field>
-            </div>
-            <div class="d-flex equal-width">
-              <mat-form-field class="mr-4">
-                <mat-label>State</mat-label>
-                <input formControlName="permanentState" matInput placeholder="Ex. Tamilnadu">
-              </mat-form-field>
-              <mat-form-field>
-                <mat-label>Postal Code</mat-label>
-                <input formControlName="permanentPostalCode" matInput #postalCode maxlength="6" type="number" placeholder="Ex. 612302" value="612302">
-                <mat-hint align="end">{{postalCode.value.length}} / 6</mat-hint>
-              </mat-form-field>
-            </div>
+            <mat-form-field class="mr-4">
+              <mat-label>City</mat-label>
+              <input formControlName="permanentCity" matInput placeholder="Ex. Kumbakonam">
+            </mat-form-field>
+
           </div>
 
         </div>
@@ -104,7 +80,8 @@
             <div class="d-flex">
               <mat-form-field>
                 <mat-label>Aadhar Number*</mat-label>
-                <input formControlName="aadharNumber" matInput #aadharCode maxlength="12" type="number" placeholder="Ex. 6123 0212 3112">
+                <input formControlName="aadharNumber" matInput #aadharCode maxlength="12" type="number"
+                       placeholder="Ex. 6123 0212 3112">
                 <mat-hint align="end">{{aadharCode.value.length}} / 12</mat-hint>
               </mat-form-field>
               <span class="d-flex align-items-center">
@@ -117,27 +94,11 @@
               <textarea formControlName="currentAddress"
                         matInput placeholder="Ex. 37 Chinna saliya St"></textarea>
             </mat-form-field>
-            <div class="d-flex equal-width">
               <mat-form-field class="mr-4">
                 <mat-label>City</mat-label>
                 <input formControlName="currentCity" matInput placeholder="Ex. Kumbakonam">
               </mat-form-field>
-              <mat-form-field>
-                <mat-label>District</mat-label>
-                <input formControlName="currentDistrict" matInput placeholder="Ex. Thanjavur">
-              </mat-form-field>
-            </div>
-            <div class="d-flex equal-width">
-              <mat-form-field class="mr-4">
-                <mat-label>State</mat-label>
-                <input formControlName="currentState"  matInput placeholder="Ex. Tamilnadu">
-              </mat-form-field>
-              <mat-form-field>
-                <mat-label>Postal Code</mat-label>
-                <input formControlName="currentPostalCode" matInput #currentPostalCode maxlength="6" type="number" placeholder="Ex. 612302" value="612302">
-                <mat-hint align="end">{{currentPostalCode.value.length}} / 6</mat-hint>
-              </mat-form-field>
-            </div>
+
           </div>
         </div>
       </div>
