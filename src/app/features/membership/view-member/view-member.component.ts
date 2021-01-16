@@ -13,33 +13,36 @@ import {FormBuilder, Validators} from "@angular/forms";
   styleUrls: ['./view-member.component.scss']
 })
 export class ViewMemberComponent implements AfterViewInit {
-  displayedColumns: string[] = ['joiningDateHdr', 'memberNumberHdr', 'designationHdr'
+  displayedColumns: string[] = ['joiningDate', 'memberNumber', 'designation'
     , 'name', 'fatherName', 'permanentAddress'
     , 'permanentCity', 'mobileNumber', 'whatsappNumber'
     , 'aadharNumber', 'currentAddress', 'currentCity'];
 
-  //dataSource = new MatTableDataSource<PeriodicElement>();
-  dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
+  dataSource = new MatTableDataSource<PeriodicElement>();
+  //dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
 
   constructor(private formBuilder : FormBuilder
     ,private httpClient: HttpClient) {
 
   }
+
   // @ts-ignore
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   // @ts-ignore
   @ViewChild(MatSort, { static: true }) sort: MatSort;
 
   ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
+
     this.httpClient.get<any>('http://localhost:8080/iwas/api/membership/get'
     ).subscribe(data => {
       console.log(data);
       //console.log("done");
       //console.log(data[0].memberNumberHdr);
       this.dataSource = new MatTableDataSource<PeriodicElement>(data);
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
     });
+
     }
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
@@ -47,9 +50,9 @@ export class ViewMemberComponent implements AfterViewInit {
   }
 }
 export interface PeriodicElement {
-  joiningDateHdr: string;
-  memberNumberHdr: string;
-  designationHdr: string;
+  joiningDate: string;
+  memberNumber: string;
+  designation: string;
   name: string;
   fatherName: string;
   permanentAddress: string;
@@ -63,9 +66,9 @@ export interface PeriodicElement {
 
 const ELEMENT_DATA: PeriodicElement[] = [
   {
-    joiningDateHdr: '01-06-2015',
-    memberNumberHdr: '1',
-    designationHdr: 'Admin',
+    joiningDate: '01-06-2015',
+    memberNumber: '1',
+    designation: 'Admin',
     name: 'Hilur Mohamed (raja)',
     fatherName:'Abdul Gaffoor',
     permanentAddress: 'Kaithey Millath Nagar',
@@ -77,9 +80,107 @@ const ELEMENT_DATA: PeriodicElement[] = [
     currentCity: 'KUWAIT',
   },
   {
-    joiningDateHdr: '01-06-2015',
-    memberNumberHdr: '1',
-    designationHdr: 'Member',
+    joiningDate: '01-06-2015',
+    memberNumber: '2',
+    designation: 'Member',
+    name: 'Hilur Mohamed (raja)',
+    fatherName:'Abdul Gaffoor',
+    permanentAddress: 'Kaithey Millath Nagar',
+    permanentCity: 'Swamimalai',
+    mobileNumber: '96598095528',
+    whatsappNumber: '96598095528',
+    aadharNumber: '',
+    currentAddress: '',
+    currentCity: 'KUWAIT',
+  },
+  {
+    joiningDate: '01-06-2015',
+    memberNumber: '3',
+    designation: 'qMember',
+    name: 'Hilur Mohamed (raja)',
+    fatherName:'Abdul Gaffoor',
+    permanentAddress: 'Kaithey Millath Nagar',
+    permanentCity: 'Swamimalai',
+    mobileNumber: '96598095528',
+    whatsappNumber: '96598095528',
+    aadharNumber: '',
+    currentAddress: '',
+    currentCity: 'KUWAIT',
+  },
+  {
+    joiningDate: '01-06-2015',
+    memberNumber: '1',
+    designation: 'Admin',
+    name: 'Hilur Mohamed (raja)',
+    fatherName:'Abdul Gaffoor',
+    permanentAddress: 'Kaithey Millath Nagar',
+    permanentCity: 'Swamimalai',
+    mobileNumber: '96598095528',
+    whatsappNumber: '96598095528',
+    aadharNumber: '',
+    currentAddress: '',
+    currentCity: 'KUWAIT',
+  },
+  {
+    joiningDate: '01-06-2015',
+    memberNumber: '2',
+    designation: 'Member',
+    name: 'Hilur Mohamed (raja)',
+    fatherName:'Abdul Gaffoor',
+    permanentAddress: 'Kaithey Millath Nagar',
+    permanentCity: 'Swamimalai',
+    mobileNumber: '96598095528',
+    whatsappNumber: '96598095528',
+    aadharNumber: '',
+    currentAddress: '',
+    currentCity: 'KUWAIT',
+  },
+  {
+    joiningDate: '01-06-2015',
+    memberNumber: '3',
+    designation: 'qMember',
+    name: 'Hilur Mohamed (raja)',
+    fatherName:'Abdul Gaffoor',
+    permanentAddress: 'Kaithey Millath Nagar',
+    permanentCity: 'Swamimalai',
+    mobileNumber: '96598095528',
+    whatsappNumber: '96598095528',
+    aadharNumber: '',
+    currentAddress: '',
+    currentCity: 'KUWAIT',
+  },
+  {
+    joiningDate: '01-06-2015',
+    memberNumber: '1',
+    designation: 'Admin',
+    name: 'Hilur Mohamed (raja)',
+    fatherName:'Abdul Gaffoor',
+    permanentAddress: 'Kaithey Millath Nagar',
+    permanentCity: 'Swamimalai',
+    mobileNumber: '96598095528',
+    whatsappNumber: '96598095528',
+    aadharNumber: '',
+    currentAddress: '',
+    currentCity: 'KUWAIT',
+  },
+  {
+    joiningDate: '01-06-2015',
+    memberNumber: '2',
+    designation: 'Member',
+    name: 'Hilur Mohamed (raja)',
+    fatherName:'Abdul Gaffoor',
+    permanentAddress: 'Kaithey Millath Nagar',
+    permanentCity: 'Swamimalai',
+    mobileNumber: '96598095528',
+    whatsappNumber: '96598095528',
+    aadharNumber: '',
+    currentAddress: '',
+    currentCity: 'KUWAIT',
+  },
+  {
+    joiningDate: '01-06-2015',
+    memberNumber: '3',
+    designation: 'qMember',
     name: 'Hilur Mohamed (raja)',
     fatherName:'Abdul Gaffoor',
     permanentAddress: 'Kaithey Millath Nagar',

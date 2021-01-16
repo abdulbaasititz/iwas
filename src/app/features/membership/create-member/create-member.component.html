@@ -11,26 +11,26 @@
         <mat-form-field appearance="fill">
           <mat-label>Joining Date</mat-label>
           <mat-datepicker #dp1 [disabled]="false"></mat-datepicker>
-          <input formControlName="joiningDateHdr" matInput [matDatepicker]="dp1">
+          <input formControlName="joiningDate" matInput [matDatepicker]="dp1">
           <mat-datepicker-toggle matSuffix [for]="dp1"></mat-datepicker-toggle>
         </mat-form-field>
       </div>
       <div class="col-md-3 col-sm-12 mt-3">
         <mat-form-field>
           <mat-label>Member Number</mat-label>
-          <input formControlName="memberNumberHdr" matInput value="iw00...">
+          <input formControlName="memberNumber" matInput value="iw00...">
         </mat-form-field>
       </div>
       <div class="col-md-3 col-sm-12 mt-3">
         <mat-form-field>
           <mat-label>Designation/Role</mat-label>
-          <input formControlName="designationHdr" matInput value="">
+          <input formControlName="designation" matInput value="">
         </mat-form-field>
       </div>
       <div class="col-md-3 col-sm-12 mt-3">
         <mat-form-field>
           <mat-label>Subscriber Type</mat-label>
-          <input formControlName="subscribeTypeHdr" matInput value="Yearly">
+          <input formControlName="subscribeType" matInput value="Yearly">
         </mat-form-field>
       </div>
     </div>

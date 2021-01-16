@@ -17,10 +17,11 @@ export class CreateMemberComponent implements OnInit {
               ,private httpClient: HttpClient) {
     this.membershipForm = this.formBuilder.group({
       // joiningDateHdr: [new FormControl(new Date()).value],
-      joiningDateHdr:['' , Validators.required],
-      memberNumberHdr: ['' , Validators.required],
-      designationHdr: ['' , Validators.required],
-      subscribeTypeHdr: ['Yearly'],
+      id:['0'],
+      joiningDate:['' , Validators.required],
+      memberNumber: ['' , Validators.required],
+      designation: ['' , Validators.required],
+      subscribeType: ['Yearly'],
       name: ['' , Validators.required],
       fatherName: ['' , Validators.required],
       permanentAddress: ['' , Validators.required],
@@ -51,11 +52,12 @@ export class CreateMemberComponent implements OnInit {
 
   submit() {
     console.log(this.membershipForm.value);
-    return this.httpClient.post<any>("http://localhost:8080/iwas/api/membership/",
+    return this.httpClient.post<any>("http://localhost:8080/iwas/api/membership/post",
       this.membershipForm.value
     ). subscribe ( response => {
       if(response){
         console.log(response);
+        this.membershipForm.reset();
       }else{
         alert("not found");
       }
