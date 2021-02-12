@@ -1,14 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormControl, FormGroup, FormGroupDirective, NgForm, Validators} from '@angular/forms';
-// import {ErrorStateMatcher} from '@angular/material/core';
-//
-// /** Error when invalid control is dirty, touched, or submitted. */
-// export class MyErrorStateMatcher implements ErrorStateMatcher {
-//   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
-//     const isSubmitted = form && form.submitted;
-//     return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
-//   }
-// }
+import { Component, OnInit } from '@angular/core';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {HttpClient} from "@angular/common/http";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-subscription',
@@ -20,19 +13,29 @@ export class SubscriptionComponent implements OnInit {
   subscriptionForm: FormGroup;
   date = new FormControl(new Date());
 
-  constructor(private formBuilder: FormBuilder) {
+  //date = new FormControl(new Date());
+  constructor(private formBuilder : FormBuilder
+              ,private httpClient: HttpClient) {
     this.subscriptionForm = this.formBuilder.group({
-      memberNumber: [''],
-      aadharNo: [''],
-      receivedDate: [''],
-      payment: [''],
-      firstName: [''],
-      lastName: [''],
-      fatherFirstName: [''],
-      fatherLastName: [''],
-      mobileNumber: [''],
-      whatsappNumber: [''],
-    });
+      id:['0'],
+      memberNumber: ['' , Validators.required],
+      aadharNo:[''],
+      receivedDate:['' , Validators.required],
+      payment:['',Validators.required],
+      
+      designation: ['' , Validators.required],
+      subscribeType: ['Yearly'],
+      
+      name: ['' , Validators.required],
+      fatherName: ['' , Validators.required],
+      permanentAddress: ['' , Validators.required],
+      permanentCity: ['' , Validators.required],
+      mobileNumber: ['' , Validators.required],
+      whatsappNumber: ['' , Validators.required],
+      aadharNumber: ['' , Validators.required],
+      currentAddress: ['' , Validators.required],
+      currentCity: ['' , Validators.required],
+       });
   }
 
   ngOnInit(): void {

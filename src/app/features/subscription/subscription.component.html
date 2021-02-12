@@ -48,64 +48,28 @@
         <div class="personal-detail info-wrapper">
           <h2 class="info-title">Personal details</h2>
           <div class="info-contents">
-            <!--          <div class="d-flex ">-->
-            <!--            <mat-checkbox class="mt-2 ">IS Member</mat-checkbox>-->
-            <!--            <mat-form-field class="ml-1">-->
-            <!--              <mat-label>Member Number*</mat-label>-->
-            <!--              <input formControlName="memberNumber" matInput placeholder="iwas00..">-->
-            <!--              <button mat-button  matSuffix mat-icon-button>-->
-            <!--                <mat-icon>search</mat-icon>-->
-            <!--              </button>-->
-            <!--            </mat-form-field>-->
-            <!--            <mat-form-field class ="">-->
-            <!--              <mat-label>  'Aadhar Number*</mat-label>-->
-            <!--              <input formControlName="aadharNumber" matInput placeholder="123462721712">-->
-            <!--              <button mat-button  matSuffix mat-icon-button>-->
-            <!--                <mat-icon>search</mat-icon>-->
-            <!--              </button>-->
-            <!--            </mat-form-field>-->
-            <!--          </div>-->
-            <div class="d-flex equal-width">
-              <mat-form-field class="mr-4">
-                <input formControlName="firstName" matInput placeholder="First Name*">
-              </mat-form-field>
-              <mat-form-field>
-                <input formControlName="lastName" matInput placeholder="Last Name*">
-              </mat-form-field>
-            </div>
-            <div class="d-flex equal-width">
-              <mat-form-field class="mr-4">
-                <input formControlName="fatherFirstName" matInput placeholder="Father First Name*">
-              </mat-form-field>
-              <mat-form-field>
-                <input formControlName="fatherLastName" matInput placeholder="Father Last Name*">
-              </mat-form-field>
-            </div>
+            <mat-form-field class="mr-4">
+              <input formControlName="name" matInput placeholder="Name*">
+              <mat-error *ngIf="subscriptionForm.controls.name.hasError('required')">Name is required</mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="mr-4">
+              <input formControlName="fatherName" matInput placeholder="Father Name*">
+              <mat-error *ngIf="subscriptionForm.controls.fatherName.hasError('required')">Father Name is
+                required
+              </mat-error>
+            </mat-form-field>
+
             <mat-form-field>
               <mat-label>Permanent Address</mat-label>
-              <textarea matInput placeholder="Ex. 39 Main St"></textarea>
+              <textarea formControlName="permanentAddress" matInput placeholder="Ex. 39 Main St"></textarea>
+
             </mat-form-field>
-            <div class="d-flex equal-width">
-              <mat-form-field class="mr-4">
-                <mat-label>City</mat-label>
-                <input matInput placeholder="Ex. Kumbakonam">
-              </mat-form-field>
-              <mat-form-field>
-                <mat-label>District</mat-label>
-                <input matInput placeholder="Ex. Thanjavur">
-              </mat-form-field>
-            </div>
-            <div class="d-flex equal-width">
-              <mat-form-field class="mr-4">
-                <mat-label>State</mat-label>
-                <input matInput placeholder="Ex. Tamilnadu">
-              </mat-form-field>
-              <mat-form-field>
-                <mat-label>Postal Code</mat-label>
-                <input matInput #postalCode maxlength="6" type="number" placeholder="Ex. 612302" value="612302">
-                <mat-hint align="end">{{postalCode.value.length}} / 6</mat-hint>
-              </mat-form-field>
-            </div>
+            <mat-form-field class="mr-4">
+              <mat-label>City</mat-label>
+              <input formControlName="permanentCity" matInput placeholder="Ex. Kumbakonam">
+            </mat-form-field>
+
           </div>
 
         </div>
@@ -125,7 +89,8 @@
             <div class="d-flex">
               <mat-form-field>
                 <mat-label>Aadhar Number*</mat-label>
-                <input matInput #aadharCode maxlength="12" type="number" placeholder="Ex. 6123 0212 3112">
+                <input formControlName="aadharNumber" matInput #aadharCode maxlength="12" type="number"
+                       placeholder="Ex. 6123 0212 3112">
                 <mat-hint align="end">{{aadharCode.value.length}} / 12</mat-hint>
               </mat-form-field>
               <span class="d-flex align-items-center">
@@ -133,32 +98,16 @@
               <span class="reg-card-text">Upload Aadhar card Details</span>
             </span>
             </div>
-
             <mat-form-field>
               <mat-label>Current Address</mat-label>
-              <textarea matInput placeholder="Ex. 37 Chinna saliya St"></textarea>
+              <textarea formControlName="currentAddress"
+                        matInput placeholder="Ex. 37 Chinna saliya St"></textarea>
             </mat-form-field>
-            <div class="d-flex equal-width">
               <mat-form-field class="mr-4">
                 <mat-label>City</mat-label>
-                <input matInput placeholder="Ex. Kumbakonam">
+                <input formControlName="currentCity" matInput placeholder="Ex. Kumbakonam">
               </mat-form-field>
-              <mat-form-field>
-                <mat-label>District</mat-label>
-                <input matInput placeholder="Ex. Thanjavur">
-              </mat-form-field>
-            </div>
-            <div class="d-flex equal-width">
-              <mat-form-field class="mr-4">
-                <mat-label>State</mat-label>
-                <input matInput placeholder="Ex. Tamilnadu">
-              </mat-form-field>
-              <mat-form-field>
-                <mat-label>Postal Code</mat-label>
-                <input matInput #postalCode maxlength="6" type="number" placeholder="Ex. 612302" value="612302">
-                <mat-hint align="end">{{postalCode.value.length}} / 6</mat-hint>
-              </mat-form-field>
-            </div>
+
           </div>
         </div>
       </div>

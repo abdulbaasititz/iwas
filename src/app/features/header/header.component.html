@@ -9,7 +9,7 @@
   <div class="row " style="background-color: #9c27b0;align-content: center;height: 50px!important;">
     <div class="col-md-3 mt-3">
       <a href="/dashboard"  class="navbar-brand">
-        <h1 style="color:white;!important" href="/dashboard">
+        <h1 style="color:white" href="/dashboard">
           <img src="../../../favicon.ico" alt="">IWAS FOUNDATION
         </h1>
       </a>
@@ -17,27 +17,24 @@
     <div class="col-md-2 ">
     </div>
     <div class="col-md-2 mt-3">
-      <button mat-button [matMenuTriggerFor]="menu">MEMBERSHIP</button>
-      <mat-menu #menu="matMenu">
+      <button mat-button [matMenuTriggerFor]="menuMember">MEMBERSHIP</button>
+      <mat-menu #menuMember="matMenu">
         <button mat-menu-item routerLink="{{routes.createMember}}">Create Member</button>
         <button mat-menu-item routerLink="{{routes.viewMember}}">View Member</button>
       </mat-menu>
-
-<!--      <a class="navbar-brand navbar-light" routerLink="{{routes.membership}}" style="color: white">-->
-<!--        <span><div class="member-dropdown"> <ul>-->
-<!--          <li>1</li>-->
-<!--          <li>2</li>-->
-<!--          <li>3</li>-->
-<!--          <li>4</li>-->
-<!--        </ul></div>Membership</span>-->
-<!--      </a>-->
-
     </div>
     <div class="col-md-2 mt-3 ">
-      <a class="navbar-brand navbar-light" routerLink="{{routes.subscription}}" style="color: white">SUBSCRIPTION</a>
+      <button mat-button [matMenuTriggerFor]="menuSub">SUBSCRIPTION</button>
+      <mat-menu #menuSub="matMenu">
+        <button mat-menu-item routerLink="{{routes.subscription}}">Create Subscription</button>
+        <button mat-menu-item routerLink="{{routes.subscription}}">View Subscription</button>
+      </mat-menu>
     </div>
     <div class="col-md-2 mt-3 ">
-      <a class="navbar-brand navbar-light" routerLink="{{routes.dazzlingDebt}}" style="color: white">ALAGHIYA KADAN</a>
+      <button mat-button [matMenuTriggerFor]="menuDebt">DAZZLING DEBT</button>
+      <mat-menu #menuDebt="matMenu">
+        <button mat-menu-item routerLink="{{routes.dazzlingDebt}}">Create DazzlingDebt</button>
+      </mat-menu>
     </div>
 
   </div>
